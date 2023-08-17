@@ -1,33 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
     <title>Weather App</title>
 </head>
 <body>
 <form method="post">
     {% csrf_token %}
-    <label for="city1">
-        <input type="text" name="city1" placeholder="City 1"/>
+    <label for="city">
+        <input type="text" name="city" placeholder="City"/>
     </label>
-    <label for="city2">
-        <input type="text" name="city2" placeholder="City 2"/>
-    </label>
-    <button type="submit">Compare Weather</button>
+    <button type="submit">Current Weather</button>
 </form>
 
 <div class="comparison-container">
 
-    {% if weather_data1 %}
-        <div class="city-container">
+    {% block content %}
+    {% endblock %}
 
-        </div>
-    {% endif %}
-    {% if weather_data2 %}
-        <div class="city-container">
-
-        </div>
-    {% endif %}
 </div>
 
 </body>
