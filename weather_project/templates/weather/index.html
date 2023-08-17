@@ -5,6 +5,30 @@
     <title>Weather App</title>
 </head>
 <body>
+<form method="post">
+    {% csrf_token %}
+    <label for="city1">
+        <input type="text" name="city1" placeholder="City 1"/>
+    </label>
+    <label for="city2">
+        <input type="text" name="city2" placeholder="City 2"/>
+    </label>
+    <button type="submit">Compare Weather</button>
+</form>
+
+<div class="comparison-container">
+
+    {% if weather_data1 %}
+        <div class="city-container">
+
+        </div>
+    {% endif %}
+    {% if weather_data2 %}
+        <div class="city-container">
+
+        </div>
+    {% endif %}
+</div>
 
 </body>
 </html>
