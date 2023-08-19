@@ -7,16 +7,16 @@
     <title>Weather App</title>
 </head>
 <body>
+<h1>What is the weather like ?</h1>
 <form method="post">
     {% csrf_token %}
     <label for="city">
         <input type="text" name="city" placeholder="City"/>
     </label>
-    <button type="submit">Current Weather</button>
+    <button type="submit">Get Weather</button>
 </form>
 
 <div class="comparison-container">
-
     {% block content %}
     {% endblock %}
 
